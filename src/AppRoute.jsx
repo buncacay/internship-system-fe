@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { routes } from "../src/routes/index";
+import { routes } from "./routes/index";
 import ProtectedRoute from "./routes/protectedRoute";
 import SignIn from "./pages/authentications/component/sign-in/sign-in.components";
 
@@ -14,7 +14,7 @@ const AppRoutes = () => {
             <Route
               key={route.path}
               path={route.path}
-              element={<SignIn />}
+              element={route.element || <SignIn />}
             />
           );
         }
