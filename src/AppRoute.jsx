@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./routes/index";
 import ProtectedRoute from "./routes/protectedRoute";
-import SignIn from "./pages/authentications/component/sign-in/sign-in.components";
+import SignIn from "./pages/authentications/sign-in/component/sign-in.components";
+
 
 const AppRoutes = () => {
   return (
