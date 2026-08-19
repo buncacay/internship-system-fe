@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuthStore } from "../../../../shares/state/authState";
+import { useAuthStore } from "../../../../shares/states/authState";
 import { PATHS } from "../../../../constants/path";
 
 export default function SignIn() {
@@ -203,6 +203,7 @@ export default function SignIn() {
                                 text-blue-600
                                 hover:text-blue-700
                             "
+              onClick={() => navigate(PATHS.HOME + "register")}
             >
               Sign Up
             </button>

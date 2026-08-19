@@ -1,38 +1,36 @@
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./routes/index";
 import ProtectedRoute from "./routes/protectedRoute";
-import SignIn from "./pages/authentications/sign-in/component/sign-in.components";
-
 
 const AppRoutes = () => {
   return (
-    <Routes>
-      {routes.map((route) => {
-        const Component = route.component;
+      <Routes>
+        {routes.map((route) => {
+          const Component = route.component;
 
-        if (route.isPublic) {
+          if (route.isPublic) {
+            return (
+                <Route
+                    key={route.path}
+                    path={route.path}
+                    element={<Component />}
+                />
+            );
+          }
+
           return (
-            <Route
-              key={route.path}
-              path={route.path}
-              element={route.element || <SignIn />}
-            />
+              <Route
+                  key={route.path}
+                  path={route.path}
+                  element={
+                    <ProtectedRoute>
+                      <Component />
+                    </ProtectedRoute>
+                  }
+              />
           );
-        }
-
-        return (
-          <Route
-            key={route.path}
-            path={route.path}
-            element={
-              <ProtectedRoute>
-                <Component />
-              </ProtectedRoute>
-            }
-          />
-        );
-      })}
-    </Routes>
+        })}
+      </Routes>
   );
 };
 

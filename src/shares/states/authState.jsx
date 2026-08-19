@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { authApi } from "../../api/authApi";
+import { authService } from "../../pages/authentications/services/authService";
+
 
 const ACCESS_TOKEN_KEY = "access_token";
 const REFRESH_TOKEN_KEY = "refresh_token";
@@ -18,7 +19,7 @@ export const useAuthStore = create((set) => ({
   ...getInitialAuth(),
 
   login: async (command) => {
-    const response = await authApi.login(command);
+    const response = await authService.login(command);
 
     if (!response.success) {
       throw new Error(response.message || "Login failed.");

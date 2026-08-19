@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { PATHS } from "../constants/path";
-import { useAuthStore } from "../shares/state/authState";
+import { useAuthStore } from "../shares/states/authState";
+
 
 
 export default function ProtectedRoute({ children }) {

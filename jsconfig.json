@@ -1,0 +1,9 @@
+
+// gợi ý code của VS Code (IntelliSense) hiểu đúng cấu trúc dự án React
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler"
+  },
+  "exclude": ["node_modules"]
+}
