@@ -1,16 +1,12 @@
-import { useAuthStore } from "../../shares/authState";
-
 export default function Home() {
-  const user = useAuthStore((state) => state.user);
-
   return (
     <div className="p-10">
       <h1 className="text-3xl font-bold">
-        Home Page
+          This is dashboard
       </h1>
 
       <p className="mt-4">
-        Welcome {user?.email}
+        Welcome baby to my world
       </p>
     </div>
   );

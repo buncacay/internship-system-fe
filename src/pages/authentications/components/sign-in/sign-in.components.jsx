@@ -19,7 +19,7 @@ export default function SignIn() {
 
     try {
       await login({ userName: username, passWord: password });
-      navigate(PATHS.HOME);
+      navigate(PATHS.HOME + "dashboard");
     } catch (loginError) {
       setError(
         loginError.response?.data?.message ||
@@ -193,21 +193,7 @@ export default function SignIn() {
             </button>
           </form>
 
-          {/* Sign Up */}
-          <p className="mt-10 text-center text-xs text-slate-400">
-            Don't have an account?{" "}
-            <button
-              type="button"
-              className="
-                                font-semibold
-                                text-blue-600
-                                hover:text-blue-700
-                            "
-              onClick={() => navigate(PATHS.HOME + "register")}
-            >
-              Sign Up
-            </button>
-          </p>
+
         </div>
       </div>
     </div>
